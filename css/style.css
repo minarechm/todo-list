@@ -1,0 +1,178 @@
+*,html{ /* Každý nový element má 0padd & margin */
+    margin:0px;
+    padding:0px;
+}
+
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing:antialiased;/*ASi to nič nerobí*/
+}
+
+header{
+    background-color: #93024f;
+}
+
+main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background-color: #06181f;
+}
+
+.container{
+    position:relative;
+    display:flex;
+    justify-content: space-between;/*medzery medzi objektmi v dive*/
+    align-items: center;
+    margin: 0 auto; /*vyrovnanie na stred*/
+    width:800px;
+}
+
+.container .icon{
+    width:200px;
+}
+
+.container .icon.heart path{
+    stroke-dasharray: 1575;
+    stroke-dashoffset: 0;
+}
+
+.container .icon.heart:hover path{
+    animation:animate-heart 1.5s linear forwards
+}
+@keyframes animate-heart{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1575;
+    }
+    80%{
+        stroke-dashoffset: 3150;
+        fill:transparent;
+    }
+    100%{
+        stroke-dashoffset: 3150;
+        fill:#93024f;
+    }
+}
+
+.container .icon.star path{
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 0;
+}
+
+.container .icon.star:hover path{
+    animation:animate-star 1.5s linear forwards
+}
+@keyframes animate-star{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1800;
+    }
+    80%{
+        stroke-dashoffset: 3600;
+        fill:transparent;
+    }
+    100%{
+        stroke-dashoffset: 3600;
+        fill:#93024f;
+    }
+}
+
+.container .icon.moon path{
+    stroke-dasharray: 1575;
+    stroke-dashoffset: 0;
+}
+
+.container .icon.moon:hover path{
+    animation:animate-moon 1.5s linear forwards
+}
+@keyframes animate-moon{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1575;
+    }
+    80%{
+        stroke-dashoffset: 3150;
+        fill:transparent;
+    }
+    100%{
+        stroke-dashoffset: 3150;
+        fill:#93024f;
+    }
+}
+
+.container .icon path{
+    fill:transparent;
+    stroke: 10;
+    stroke: #31e8ff;
+    stroke-width: 10;;
+}
+
+.navbar{
+    display:inline-block;
+    width: 100%;
+    color:#93024f;
+    background-color:rgb(0, 0, 0)
+}
+
+.navbarVlavo{
+    float:left;
+    margin-left:10px;
+    width:500px;
+}
+
+.navbarVpravo{
+    float:right;
+    margin-top:30px;
+    margin-bottom:30px;
+    margin-right:25px;
+    text-decoration: none;
+}
+
+.navbarVpravo li{
+    /*background-color:rgb(255, 255, 255);*/
+    display:inline;
+    list-style-type: none;
+    border-left: 1px solid #93024f;
+    padding:25px 0;
+}
+
+.navbarVpravo li:last-child{
+    border-right: 1px solid #93024f;
+}
+
+.navbarVpravo a{
+    text-decoration:none;
+    color:teal;
+    background-color:white;
+    margin-left:15px;
+    margin-right:15px;
+    padding:15px;
+    border-radius:5%;
+}
+
+.navbarVpravo a:hover,
+.navbarVpravo a:focus{
+    transition: background-color 0.5s ease;
+    background-color: rgb(171, 17, 17);
+}
+
+@media screen and (max-width: 620px) {
+    body {
+      color: red;
+    }
+    .navbarVpravo li{
+        display:flex;
+        float:left;
+    }
+    .navbarVlavo{
+        margin:15px 40%
+    }
+  }
